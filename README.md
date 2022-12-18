@@ -56,8 +56,5 @@ Now, when you do your loop, change the _data_ not the `DataGridViewRow`:
         theLoai.SoTuaSach = testValue; 
     }
 
-***
-
-
 
   [1]: https://i.stack.imgur.com/is7jg.png
