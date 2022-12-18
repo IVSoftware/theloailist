@@ -1,3 +1,6 @@
+
+[![screenshot][1]][1]
+
 Binding the `TheLoaiGrid.DataSource` to the `TheLoaiList` that's _good_ because you can change what's in the `DataGridView` by changing `TheLoaiList`.
 
 NEXT: The _items_ in the list can work the same way. Suppose you  defined `TheLoaiList` this way:
@@ -55,9 +58,6 @@ Now, when you do your loop, change the _data_ not the `DataGridViewRow`:
 
 ***
 
-Here's a minimal working [sample](https://github.com/IVSoftware/theloailist.git) if you want to try this out.
-
-[![screenshot][1]][1]
 
 
   [1]: https://i.stack.imgur.com/is7jg.png
