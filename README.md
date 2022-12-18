@@ -1,11 +1,7 @@
-
 [![screenshot][1]][1]
 
-Binding the `TheLoaiGrid.DataSource` to the `TheLoaiList` that's _good_ because you can change what's in the `DataGridView` by changing `TheLoaiList`.
+Your [code](https://stackoverflow.com/q/74843259/5438626) shows you are on the right track! Binding the `TheLoaiGrid.DataSource` to the `TheLoaiList` that's _good_ because you can change what's in the `DataGridView` by changing `TheLoaiList`. The next step you might want to try is making the _items_ in the list work the same way (using binding) so that when you do your loop, you can modify the _data_ not the `DataGridViewRow`:
 
-Next, one option is to have the _items_ in the list can work like that, too, so that when you do your loop, you can work with the _data_ not the `DataGridViewRow`:
-
-    // Now perform change the value on the Data not the DataGridView
     foreach (TheLoai theLoai in TheLoaiList)
     {
         theLoai.SoTuaSach = "10"; 
@@ -16,7 +12,7 @@ For this to work, it requires a small change to the class that represents your r
 
     BindingList<TheLoai> TheLoaiList { get; } = new BindingList<TheLoai>();
 
-Then here's an example of how to notify the `DataGridView` when a property changes using `INotifyPropertyChanged`:
+Then here's an example of how to automatically notify the `DataGridView` when a property changes using `INotifyPropertyChanged`:
 
     // using System.Runtime.CompilerServices;
     class TheLoai : INotifyPropertyChanged
@@ -54,6 +50,5 @@ Then here's an example of how to notify the `DataGridView` when a property chang
         }
     }
 
-***
 
-  [1]: https://i.stack.imgur.com/is7jg.png
+  [1]: https://i.stack.imgur.com/WGL6q.png
