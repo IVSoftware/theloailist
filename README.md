@@ -3,7 +3,16 @@
 
 Binding the `TheLoaiGrid.DataSource` to the `TheLoaiList` that's _good_ because you can change what's in the `DataGridView` by changing `TheLoaiList`.
 
-NEXT: The _items_ in the list can work the same way. Suppose you  defined `TheLoaiList` this way:
+Next, one option is to have the _items_ in the list can work like that, too, so that when you do your loop, you can work with the _data_ not the `DataGridViewRow`:
+
+    // Now perform change the value on the Data not the DataGridView
+    foreach (TheLoai theLoai in TheLoaiList)
+    {
+        theLoai.SoTuaSach = "10"; 
+    }
+***
+
+For this to work, it requires a small change to the class that represents your row items. Suppose you  defined `TheLoaiList` this way:
 
     BindingList<TheLoai> TheLoaiList { get; } = new BindingList<TheLoai>();
 
@@ -46,15 +55,5 @@ Then here's an example of how to notify the `DataGridView` when a property chang
     }
 
 ***
-
-Now, when you do your loop, change the _data_ not the `DataGridViewRow`:
-
-    // Now perform change the value on the Data not the DataGridView
-    var testValue = _testCount++.ToString();
-    foreach (TheLoai theLoai in TheLoaiList)
-    {
-        theLoai.SoTuaSach = testValue; 
-    }
-
 
   [1]: https://i.stack.imgur.com/is7jg.png
